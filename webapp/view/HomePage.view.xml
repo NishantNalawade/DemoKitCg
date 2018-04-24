@@ -11,7 +11,7 @@
 							<items>
 								<IconTabFilter
 									icon="sap-icon://database"
-									text="Tenant Management">
+									text="Tenant Management" class="sapUiSmallMargin">
 									<content>
 										<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.view.TenantManager" async="true" />
 									</content>
