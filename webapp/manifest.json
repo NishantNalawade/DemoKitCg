@@ -101,7 +101,17 @@
 				},
 				"TenantManager": {
 					"viewType": "XML",
-					"viewName": "TenantManager"
+					"viewName": "TenantManager",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "com.sap.cg.demokit.DemoKitCg.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"DeviceManager": {
+					"viewType": "XML",
+					"viewName": "DeviceManager"
 				}
 			}
 		}

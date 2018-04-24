@@ -13,14 +13,14 @@
 									icon="sap-icon://database"
 									text="Tenant Management">
 									<content>
-										<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.controller.TenantManager" async="true" />
+										<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.view.TenantManager" async="true" />
 									</content>
 								</IconTabFilter>
 								<IconTabFilter
 									icon="sap-icon://it-system"
 									text="Device Management">
 									<content>
-										
+										<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.view.DeviceManager" async="true" />
 									</content>
 								</IconTabFilter>
 								<IconTabFilter

@@ -1,9 +1,41 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
 	controllerName="com.sap.cg.demokit.DemoKitCg.controller.TenantManager" xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="Title">
-				<content></content>
+			<Page title="Title" showHeader="false">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormToolbar" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4"
+							labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+							singleContainerFullSize="false" ariaLabelledBy="Title1">
+							<f:toolbar>
+								<Toolbar id="TB1">
+									<Title id="Tenenthead" text="Tenent Details" level="H4" titleStyle="H4"/>
+									<ToolbarSpacer/>
+								</Toolbar>
+							</f:toolbar>
+							<f:content>
+								<Label text="Name"/>
+								<Input value="{TenentName}"/>
+								<Label text="Tenenet ID"/>
+								<Input value="{TenentID}"/>
+								<Label text="UserName"/>
+								<Input value="{UserName}"/>
+								<Label text="Status"/>
+								<Select id="Status" selectedKey="{Status}">
+									<items>
+										<core:Item text="In Use" key="inuse"/>
+										<core:Item text="Not In Use" key="notinuse"/>
+										<core:Item text="Setup in progress" key="inprogress"/>
+										<core:Item text="Not Working" key="notworking"/>
+									</items>
+								</Select>
+							</f:content>
+							<Button type="Accept" text="Save"/>
+							<Button type="Accept" text="Update"/>
+						</f:SimpleForm>
+					</VBox>
+				</content>
 			</Page>
 		</pages>
 	</App>
