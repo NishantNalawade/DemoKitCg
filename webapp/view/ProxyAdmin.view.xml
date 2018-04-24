@@ -1,0 +1,26 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="com.sap.cg.demokit.DemoKitCg.controller.ProxyAdmin" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Title" showHeader="false">
+				<content><VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="proxyToolbar" editable="true" layout="ResponsiveGridLayout">
+							<f:toolbar>
+								<Toolbar id="Tb2">
+									<Title id="proxyheader" text="Proxy Administration" level="H4" titleStyle="H4"/>
+									<ToolbarSpacer/>
+								</Toolbar>
+							</f:toolbar>
+							<f:content>
+								<Label text="Client ID"/>
+								<Input value="{clientId}"/>
+								<Label text="Client Secret"/>
+								<Input value="{clientSecret}"/>
+								<Button type="Accept" text="Refresh"/>
+							</f:content>
+						</f:SimpleForm>
+					</VBox></content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

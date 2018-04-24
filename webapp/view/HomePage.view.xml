@@ -27,7 +27,7 @@
 									icon="sap-icon://key-user-settings"
 									text="Proxy Admin">
 									<content>
-										
+											<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.view.ProxyAdmin" async="true" />
 									</content>
 								</IconTabFilter>
 							</items>
