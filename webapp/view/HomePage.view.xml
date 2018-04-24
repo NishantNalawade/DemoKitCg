@@ -3,7 +3,36 @@
 	<App id="idAppControl">
 		<pages>
 			<Page title="{i18n>title}">
-				<content></content>
+				<content>
+						<IconTabBar
+							id="idIconTabBarMulti"
+							expanded="{device>/isNoPhone}"
+							class="sapUiResponsiveContentPadding">
+							<items>
+								<IconTabFilter
+									icon="sap-icon://database"
+									text="Tenant Management">
+									<content>
+										<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.controller.TenantManager" async="true" />
+									</content>
+								</IconTabFilter>
+								<IconTabFilter
+									icon="sap-icon://it-system"
+									text="Device Management">
+									<content>
+										
+									</content>
+								</IconTabFilter>
+								<IconTabFilter
+									icon="sap-icon://key-user-settings"
+									text="Proxy Admin">
+									<content>
+										
+									</content>
+								</IconTabFilter>
+							</items>
+						</IconTabBar>
+				</content>
 			</Page>
 		</pages>
 	</App>
