@@ -111,7 +111,17 @@
 				},
 				"DeviceManager": {
 					"viewType": "XML",
-					"viewName": "DeviceManager"
+					"viewName": "DeviceManager",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "com.sap.cg.demokit.DemoKitCg.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"ProxyAdmin": {
+					"viewType": "XML",
+					"viewName": "ProxyAdmin"
 				}
 			}
 		}
