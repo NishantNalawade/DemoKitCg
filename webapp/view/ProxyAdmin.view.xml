@@ -3,11 +3,14 @@
 	<App>
 		<pages>
 			<Page title="Title" showHeader="false">
-				<content><VBox class="sapUiSmallMargin">
-						<f:SimpleForm id="proxyToolbar" editable="true" layout="ResponsiveGridLayout">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="proxyFrom1" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+							adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+							singleContainerFullSize="false" ariaLabelledBy="Title1">
 							<f:toolbar>
 								<Toolbar id="Tb2">
-									<Title id="proxyheader" text="Proxy Administration" level="H4" titleStyle="H4"/>
+									<Title text="Proxy Administration" level="H4" titleStyle="H4"/>
 									<ToolbarSpacer/>
 								</Toolbar>
 							</f:toolbar>
@@ -16,10 +19,23 @@
 								<Input value="{clientId}"/>
 								<Label text="Client Secret"/>
 								<Input value="{clientSecret}"/>
-								<Button type="Accept" text="Refresh"/>
+								<Button type="Emphasized" text="Update"/>
 							</f:content>
 						</f:SimpleForm>
-					</VBox></content>
+						<f:SimpleForm id="proxyform2" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12"
+							adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+							singleContainerFullSize="false" ariaLabelledBy="Title1">
+							<f:toolbar>
+								<Toolbar id="Tb3">
+									<Title text="Refresh Payload" level="H4" titleStyle="H4"/>
+									<ToolbarSpacer/>
+									<Button type="Emphasized" text="Refresh"/>
+								</Toolbar>
+							</f:toolbar>
+							<f:content></f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
 			</Page>
 		</pages>
 	</App>
