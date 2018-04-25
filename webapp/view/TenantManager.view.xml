@@ -31,8 +31,8 @@
 									</items>
 								</Select>
 							</f:content>
-							<Button type="Accept" text="Save"/>
-							<Button type="Accept" text="Update"/>
+							<Button type="Emphasized" text="Save"/>
+							<Button text="Update"/>
 						</f:SimpleForm>
 					</VBox>
 				</content>

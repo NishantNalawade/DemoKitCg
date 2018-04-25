@@ -1,10 +1,39 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
 	controllerName="com.sap.cg.demokit.DemoKitCg.controller.DeviceManager" xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
 			<Page title="Title" showHeader="false">
 				<content>
-					
+						<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormToolbar" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4"
+							labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+							singleContainerFullSize="false" ariaLabelledBy="Title1">
+							<f:toolbar>
+								<Toolbar id="TB1">
+									<Title id="Device_head" text="Device Details" level="H4" titleStyle="H4"/>
+									<ToolbarSpacer/>
+								</Toolbar>
+							</f:toolbar>
+							<f:content>
+								<Label text="UID"/>
+								<Input value="{TenentName}"/>
+								<Label text="Tenenet Name"/>
+								<Select>
+									<core:Item key="{ProductId}" text="{Name}" />
+								</Select>
+								<Label text="Device ID"/>
+								<Input value="{DeviceName}"/>
+								<Label text="Device Type"/>
+								<Select id="deviceType">
+									<items>
+										<core:Item text="Cooler" key="inuse"/>
+										<core:Item text="Dispenser" key="notinuse"/>
+									</items>
+								</Select>
+							</f:content>
+							<Button type="Emphasized" text="Save"/>
+						</f:SimpleForm>
+					</VBox>
 				</content>
 			</Page>
 		</pages>
