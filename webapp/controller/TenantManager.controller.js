@@ -44,14 +44,20 @@ sap.ui.define([
 			});
 			this.getView().setModel(oModel);
 		},
+		
 		addTenant: function(oEvent) {
-			var oTab=this.getView().getParent();//sap.ui.getCore().byId("tenant_tab");
-			oTab.destroyContent();
-			var oTenantDetailPage=new XMLView({
-				viewName:"com.sap.cg.demokit.DemoKitCg.view.TenantOnboard"
-				});
-			
-			oTab.addContent(oTenantDetailPage);
+			var oView = this.getView();
+			this.oDialog = oView.byId("tenantOnboard");
+			if (!this.oDialog) {
+	            // create dialog via fragment factory
+	            this.oDialog = sap.ui.xmlfragment("com.sap.cg.demokit.DemoKitCg.fragment.TenantOnboard",this);
+	            oView.addDependent(this.oDialog);
+	         }
+	         this.oDialog.open();
+		},
+		
+		closeDialog:function(){
+			this.oDialog.close();
 		}
 
 		/**
