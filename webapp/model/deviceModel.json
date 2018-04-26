@@ -1,0 +1,25 @@
+{
+	"devices":[
+		{
+			"uid":"123434314",
+			"deviceName":"cooler1",
+			"tenantName":"cocacola",
+			"deviceId":"5464455",
+			"deviceType":"cooler"
+		},
+	    {
+			"uid":"123123",
+			"deviceName":"Mydispenser",
+			"tenantName":"cocacola",
+			"deviceId":"11341",
+			"deviceType":"dispenser"
+		},
+		{
+			"uid":"asdas",
+			"deviceName":"coca cola",
+			"tenantName":"pepsi",
+			"deviceId":"67868",
+			"deviceType":"cooler"
+		}
+		]
+}

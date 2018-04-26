@@ -1,0 +1,16 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.sap.cg.demokit.DemoKitCg.controller.DeviceManagement" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Title" showHeader="flase">
+				<content>
+					<List id="deviceList" headerText="Devices"   items="{ path: '/devices',	sorter: { path: 'uid' } }">
+		<items>
+			<StandardListItem title="{deviceName}" description="{tenantName}" type="Navigation" icon="{path:'deviceType',formatter:'.formatter'}" iconDensityAware="false" iconInset="false" />
+		</items>
+	</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

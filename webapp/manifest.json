@@ -121,7 +121,17 @@
 				},
 				"ProxyAdmin": {
 					"viewType": "XML",
-					"viewName": "ProxyAdmin"
+					"viewName": "ProxyAdmin",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "com.sap.cg.demokit.DemoKitCg.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"DeviceManagementNew": {
+					"viewType": "XML",
+					"viewName": "DeviceManagementNew"
 				}
 			}
 		}
