@@ -6,7 +6,7 @@
 				<content>
 					<List id="deviceList" headerText="Devices"   items="{ path: '/devices',	sorter: { path: 'uid' } }">
 		<items>
-			<StandardListItem title="{deviceName}" description="{tenantName}" type="Navigation" icon="{path:'deviceType',formatter:'.formatter'}" iconDensityAware="false" iconInset="false" />
+			<StandardListItem title="{deviceName}" description="{tenantName}" type="Navigation" icon="{path:'deviceType',formatter:'.iconFormatter'}" iconDensityAware="false" iconInset="false" />
 		</items>
 	</List>
 				</content>

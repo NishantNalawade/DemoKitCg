@@ -4,7 +4,7 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("com.sap.cg.demokit.DemoKitCg.controller.DeviceManagement", {
-		formatter:function(deviceType){
+		iconFormatter:function(deviceType){
 			var icon="sap-icon://product";
 				if(deviceType === "cooler"){
 				icon="sap-icon://fridge";
