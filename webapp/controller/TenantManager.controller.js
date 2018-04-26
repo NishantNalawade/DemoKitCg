@@ -1,8 +1,10 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"com/sap/cg/demokit/DemoKitCg/model/formatter",
-	'sap/ui/model/Filter'
-], function(Controller,formatter,Filter) {
+	"sap/ui/model/Filter",
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/core/mvc/XMLView"
+], function(Controller, formatter, Filter, JSONModel, XMLView) {
 	"use strict";
 
 	return Controller.extend("com.sap.cg.demokit.DemoKitCg.controller.TenantManager", {
@@ -12,8 +14,8 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf com.sap.cg.demokit.DemoKitCg.view.TenantManager
 		 */
-			formatter:formatter,
-				onSearch : function (oEvt) {
+		formatter: formatter,
+		onSearch: function(oEvt) {
 
 			// add filter for search
 			var aFilters = [];
@@ -28,26 +30,29 @@ sap.ui.define([
 			var binding = list.getBinding("items");
 			binding.filter(aFilters, "Application");
 		},
-			onInit: function() {
-				var oModel=new sap.ui.model.json.JSONModel();
-				$.ajax({
-					url:"model/tenant.json",
-					method:"GET",
-					success : function(data) {
-						oModel.setData(data);
-					},
-					error : function(e) {
-						//error code
-					}
+		onInit: function() {
+			var oModel = new JSONModel();
+			$.ajax({
+				url: "model/tenant.json",
+				method: "GET",
+				success: function(data) {
+					oModel.setData(data);
+				},
+				error: function(e) {
+					//error code
+				}
+			});
+			this.getView().setModel(oModel);
+		},
+		addTenant: function(oEvent) {
+			var oTab=this.getView().getParent();//sap.ui.getCore().byId("tenant_tab");
+			oTab.destroyContent();
+			var oTenantDetailPage=new XMLView({
+				viewName:"com.sap.cg.demokit.DemoKitCg.view.TenantOnboard"
 				});
-				this.getView().setModel(oModel);
-			},
-			addTenant:function(oEvent){
-				// var oTab=sap.ui.getCore().byId("tenant_tab");
-				// oTab.destroyContent();
-				
-				// oTab.addContent();
-			}
+			
+			oTab.addContent(oTenantDetailPage);
+		}
 
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
