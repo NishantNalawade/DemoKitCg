@@ -8,9 +8,11 @@
 						<headerToolbar>
 							<Toolbar >
 								<content>
-									<Title level="H3" text="Tenants" />
-									<ToolbarSpacer />
-									<Button icon="sap-icon://add" press="addTenant" />
+									<SearchField
+									liveChange="onSearch"
+									width="100%" />
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://add" />
 								</content>
 							</Toolbar>
 						</headerToolbar>

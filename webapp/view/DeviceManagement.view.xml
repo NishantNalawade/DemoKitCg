@@ -2,13 +2,15 @@
 	controllerName="com.sap.cg.demokit.DemoKitCg.controller.DeviceManagement" xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="Title" showHeader="flase">
+			<Page showHeader="flase">
 				<content>
-					<List id="deviceList" headerText="Devices" items="{ path: '/devices', sorter: { path: 'uid' } }">
+					<List id="deviceList" items="{ path: '/devices', sorter: { path: 'uid' } }">
 						<headerToolbar>
 							<Toolbar >
 								<content>
-									<Title level="H3" text="Tenants"/>
+									<SearchField
+									liveChange="onSearch"
+									width="100%" />
 									<ToolbarSpacer/>
 									<Button icon="sap-icon://add" />
 								</content>
