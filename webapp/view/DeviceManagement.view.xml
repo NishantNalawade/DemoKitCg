@@ -4,11 +4,21 @@
 		<pages>
 			<Page title="Title" showHeader="flase">
 				<content>
-					<List id="deviceList" headerText="Devices"   items="{ path: '/devices',	sorter: { path: 'uid' } }">
-		<items>
-			<StandardListItem title="{deviceName}" description="{tenantName}" type="Navigation" icon="{path:'deviceType',formatter:'.iconFormatter'}" iconDensityAware="false" iconInset="false" />
-		</items>
-	</List>
+					<List id="deviceList" headerText="Devices" items="{ path: '/devices', sorter: { path: 'uid' } }">
+						<headerToolbar>
+							<Toolbar >
+								<content>
+									<Title level="H3" text="Tenants"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://add" />
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<items>
+							<StandardListItem title="{deviceName}" description="{tenantName}" type="Navigation" icon="{path:'deviceType',formatter:'.iconFormatter'}"
+								iconDensityAware="false" iconInset="false"/>
+						</items>
+					</List>
 				</content>
 			</Page>
 		</pages>

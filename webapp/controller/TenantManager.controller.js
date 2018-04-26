@@ -25,6 +25,12 @@ sap.ui.define([
 					}
 				});
 				this.getView().setModel(oModel);
+			},
+			addTenant:function(oEvent){
+				// var oTab=sap.ui.getCore().byId("tenant_tab");
+				// oTab.destroyContent();
+				
+				// oTab.addContent();
 			}
 
 		/**

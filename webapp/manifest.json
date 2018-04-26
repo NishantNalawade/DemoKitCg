@@ -62,11 +62,9 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -78,14 +76,13 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [
-				{
-					"name": "RouteView1",
-					"pattern": "RouteView1",
-					"target": [
-						"TargetView1"
-					]
-				}
+			"routes": [{
+				"name": "RouteView1",
+				"pattern": "RouteView1",
+				"target": [
+					"TargetView1"
+				]
+			}
 			],
 			"targets": {
 				"TargetView1": {
@@ -133,7 +130,7 @@
 				"DeviceManagementNew": {
 					"viewType": "XML",
 					"viewName": "DeviceManagementNew"
-},
+				},
 				"DeviceOnboard": {
 					"viewType": "XML",
 					"viewName": "DeviceOnboard",

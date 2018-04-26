@@ -10,6 +10,7 @@
 							class="sapUiResponsiveContentPadding">
 							<items>
 								<IconTabFilter
+									id="tenant_tab"
 									icon="sap-icon://database"
 									text="Tenants" class="sapUiSmallMargin">
 									<content>

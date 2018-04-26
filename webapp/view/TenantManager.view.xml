@@ -5,6 +5,15 @@
 			<Page title="Title" showHeader="false">
 				<content>
 					<List headerText="Tenants" items="{ path: '/'}" >
+						<headerToolbar>
+							<Toolbar >
+								<content>
+									<Title level="H3" text="Tenants" />
+									<ToolbarSpacer />
+									<Button icon="sap-icon://add" press="addTenant" />
+								</content>
+							</Toolbar>
+						</headerToolbar>
 						<items>
 							<StandardListItem title="{name}" description="{tenantID}" info="{path:'status', formatter:'.formatter.infoText'}" type="Navigation"
 							infoState="{path:'status', formatter:'.formatter.infoStatus'}"/>
