@@ -5,6 +5,32 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("com.sap.cg.demokit.DemoKitCg.controller.DeviceManagement", {
+		dialogfragment:null,
+		onDialogOpen: function(oEvent) {
+			if(!this.dialogFragment){
+			this.dialogFragment = sap.ui.xmlfragment("com.sap.cg.demokit.DemoKitCg.fragment.DeviceOnboard", this);
+			this.getView().addDependent(this.dialogFragment);
+			}
+			this.dialogFragment.open();
+			var flag=false;
+			if(oEvent.getSource().getBindingContext()){
+			var path=oEvent.getSource().getBindingContext().sPath;
+			flag=true;
+			}
+			var buttons=this.dialogFragment.getAggregation("buttons");
+			for(var i in buttons){
+				if(buttons[i].getId() === "deviceObtn" ){
+					if(flag)
+					buttons[i].setText("Update");
+					else
+					buttons[i].setText("Save");
+				}
+			}
+			
+		},
+		closeDialog:function(oEvent){
+			this.dialogFragment.close();
+		},
 			onSearch : function (oEvt) {
 
 			// add filter for search

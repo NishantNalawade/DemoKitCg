@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog id="deviceOnboard" stretch="true">
+		<content>
+			<VBox class="sapUiSmallMargin">
+						<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4"
+							labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+							singleContainerFullSize="false" ariaLabelledBy="Title1">
+							<f:toolbar>
+								<Toolbar >
+									<Title text="Device Details" level="H4" titleStyle="H4"/>
+									<ToolbarSpacer/>
+								</Toolbar>
+							</f:toolbar>
+							<f:content>
+								<Label text="Device Name"/>
+								<Input value="{deviceName}"/>
+								<Label text="UID"/>
+								<Input value="{uid}"/>
+								<Label text="Tenenet Name"/>
+								<Select>
+									<core:Item key="{ProductId}" text="{Name}" />
+								</Select>
+								<Label text="Device ID"/>
+								<Input value="{DeviceName}"/>
+								<Label text="Device Type"/>
+								<Select>
+									<items>
+										<core:Item text="Cooler" key="inuse"/>
+										<core:Item text="Dispenser" key="notinuse"/>
+									</items>
+								</Select>
+							</f:content>
+						
+						</f:SimpleForm>
+					</VBox>
+		</content>
+			<buttons>
+							<Button id="deviceObtn" text="Save"/>	
+							<Button press="closeDialog" text="close"/>
+			</buttons>
+							
+	</Dialog>
+</core:FragmentDefinition>
