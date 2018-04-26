@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"com/sap/cg/demokit/DemoKitCg/model/formatter"
-], function(Controller,formatter) {
+	"com/sap/cg/demokit/DemoKitCg/model/formatter",
+	'sap/ui/model/Filter'
+], function(Controller,formatter,Filter) {
 	"use strict";
 
 	return Controller.extend("com.sap.cg.demokit.DemoKitCg.controller.TenantManager", {
@@ -12,6 +13,21 @@ sap.ui.define([
 		 * @memberOf com.sap.cg.demokit.DemoKitCg.view.TenantManager
 		 */
 			formatter:formatter,
+				onSearch : function (oEvt) {
+
+			// add filter for search
+			var aFilters = [];
+			var sQuery = oEvt.getSource().getValue();
+			if (sQuery && sQuery.length > 0) {
+				var filter = new Filter("name", sap.ui.model.FilterOperator.Contains, sQuery);
+				aFilters.push(filter);
+			}
+
+			// update list binding
+			var list = this.getView().byId("tenantList");
+			var binding = list.getBinding("items");
+			binding.filter(aFilters, "Application");
+		},
 			onInit: function() {
 				var oModel=new sap.ui.model.json.JSONModel();
 				$.ajax({

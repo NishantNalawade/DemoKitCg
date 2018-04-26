@@ -1,9 +1,25 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	'sap/ui/model/Filter'
+], function(Controller,Filter) {
 	"use strict";
 
 	return Controller.extend("com.sap.cg.demokit.DemoKitCg.controller.DeviceManagement", {
+			onSearch : function (oEvt) {
+
+			// add filter for search
+			var aFilters = [];
+			var sQuery = oEvt.getSource().getValue();
+			if (sQuery && sQuery.length > 0) {
+				var filter = new Filter("deviceName", sap.ui.model.FilterOperator.Contains, sQuery);
+				aFilters.push(filter);
+			}
+
+			// update list binding
+			var list = this.getView().byId("deviceList");
+			var binding = list.getBinding("items");
+			binding.filter(aFilters, "Application");
+		},
 		iconFormatter:function(deviceType){
 			var icon="sap-icon://product";
 				if(deviceType === "cooler"){
