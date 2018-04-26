@@ -4,37 +4,12 @@
 		<pages>
 			<Page title="Title" showHeader="false">
 				<content>
-					<VBox class="sapUiSmallMargin">
-						<f:SimpleForm id="SimpleFormToolbar" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4"
-							labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
-							singleContainerFullSize="false" ariaLabelledBy="Title1">
-							<f:toolbar>
-								<Toolbar id="TB1">
-									<Title id="Tenenthead" text="Tenent Details" level="H4" titleStyle="H4"/>
-									<ToolbarSpacer/>
-								</Toolbar>
-							</f:toolbar>
-							<f:content>
-								<Label text="Name"/>
-								<Input value="{TenentName}"/>
-								<Label text="Tenenet ID"/>
-								<Input value="{TenentID}"/>
-								<Label text="UserName"/>
-								<Input value="{UserName}"/>
-								<Label text="Status"/>
-								<Select id="Status" selectedKey="{Status}">
-									<items>
-										<core:Item text="In Use" key="inuse"/>
-										<core:Item text="Not In Use" key="notinuse"/>
-										<core:Item text="Setup in progress" key="inprogress"/>
-										<core:Item text="Not Working" key="notworking"/>
-									</items>
-								</Select>
-							</f:content>
-							<Button type="Emphasized" text="Save"/>
-							<Button text="Update"/>
-						</f:SimpleForm>
-					</VBox>
+					<List headerText="Tenants" items="{ path: '/'}" >
+						<items>
+							<StandardListItem title="{name}" description="{tenantID}" info="{path:'status', formatter:'.formatter.infoText'}" type="Navigation"
+							infoState="{path:'status', formatter:'.formatter.infoStatus'}"/>
+						</items>
+					</List>
 				</content>
 			</Page>
 		</pages>
