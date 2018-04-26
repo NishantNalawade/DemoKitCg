@@ -1,0 +1,26 @@
+[{
+	"name": "tenant1",
+	"tenantID": "001",
+	"userName": "i338015",
+	"status": "inuse"
+}, {
+	"name": "tenant2",
+	"tenantID": "002",
+	"userName": "i338016",
+	"status": "inprogress"
+}, {
+	"name": "tenant3",
+	"tenantID": "003",
+	"userName": "i338019",
+	"status": "notinuse"
+}, {
+	"name": "tenant12",
+	"tenantID": "011",
+	"userName": "i338015",
+	"status": "inuse"
+}, {
+	"name": "tenant21",
+	"tenantID": "092",
+	"userName": "i338015",
+	"status": "notworking"
+}]

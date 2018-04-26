@@ -129,9 +129,25 @@
 					"controlId": "idAppControl",
 					"clearControlAggregation": false
 				},
+
 				"DeviceManagementNew": {
 					"viewType": "XML",
 					"viewName": "DeviceManagementNew"
+},
+				"DeviceOnboard": {
+					"viewType": "XML",
+					"viewName": "DeviceOnboard",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "com.sap.cg.demokit.DemoKitCg.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"TenantOnboard": {
+					"viewType": "XML",
+					"viewName": "TenantOnboard"
+
 				}
 			}
 		}

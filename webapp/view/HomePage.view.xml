@@ -11,14 +11,14 @@
 							<items>
 								<IconTabFilter
 									icon="sap-icon://database"
-									text="Tenant Management" class="sapUiSmallMargin">
+									text="Tenants" class="sapUiSmallMargin">
 									<content>
 										<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.view.TenantManager" async="true" />
 									</content>
 								</IconTabFilter>
 								<IconTabFilter
 									icon="sap-icon://it-system"
-									text="Device Management">
+									text="Devices">
 									<content>
 										<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.view.DeviceManagement" async="true" />
 									</content>
