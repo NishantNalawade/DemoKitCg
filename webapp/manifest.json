@@ -129,6 +129,11 @@
 					"controlId": "idAppControl",
 					"clearControlAggregation": false
 				},
+
+				"DeviceManagementNew": {
+					"viewType": "XML",
+					"viewName": "DeviceManagementNew"
+},
 				"DeviceOnboard": {
 					"viewType": "XML",
 					"viewName": "DeviceOnboard",
@@ -142,6 +147,7 @@
 				"TenantOnboard": {
 					"viewType": "XML",
 					"viewName": "TenantOnboard"
+
 				}
 			}
 		}

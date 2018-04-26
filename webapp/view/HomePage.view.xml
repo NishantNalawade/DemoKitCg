@@ -20,7 +20,7 @@
 									icon="sap-icon://it-system"
 									text="Devices">
 									<content>
-										<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.view.DeviceManager" async="true" />
+										<mvc:XMLView viewName="com.sap.cg.demokit.DemoKitCg.view.DeviceManagement" async="true" />
 									</content>
 								</IconTabFilter>
 								<IconTabFilter
