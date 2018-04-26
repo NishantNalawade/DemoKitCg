@@ -4,11 +4,11 @@
 		<pages>
 			<Page title="Title" showHeader="false">
 				<content>
-					<List headerText="Tenants" items="{ path: '/'}" >
+					<List id="tenantList" headerText="Tenants" items="{ path: '/'}" >
 						<headerToolbar>
 							<Toolbar >
 								<content>
-									<Title level="H3" text="Tenants" />
+									<SearchField liveChange="onSearch"	width="100%" />
 									<ToolbarSpacer />
 									<Button icon="sap-icon://add" press="addTenant" />
 								</content>
