@@ -8,13 +8,9 @@
 						<headerToolbar>
 							<Toolbar >
 								<content>
-<<<<<<< HEAD
 									<SearchField
 									liveChange="onSearch"
 									width="100%" />
-=======
-									<SearchField liveChange="onSearch"	width="100%" />
->>>>>>> refs/remotes/origin/parmeet
 									<ToolbarSpacer/>
 									<Button icon="sap-icon://add" />
 								</content>
