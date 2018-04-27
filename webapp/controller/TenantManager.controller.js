@@ -65,18 +65,24 @@ sap.ui.define([
 		editTenant:function(oEvent){
 			var id=oEvent.getSource().getDescription();
 			var jsonData=this.getView().getModel().getData();
-			for(var i=0;i<jsonData.length;i++){
-				if(jsonData[i].tenantID===id){
-					
-				}    
-			}
+			
 			if (!this.oDialog) {
 				this.oDialog = sap.ui.xmlfragment("com.sap.cg.demokit.DemoKitCg.fragment.TenantOnboard", this);
 				this.getView().addDependent(this.oDialog);
 			}
 			this.oDialog.open();
 			var buttons = this.oDialog.getAggregation("buttons");
-			buttons[0].setText("Update");
+			for (var i in buttons) {
+				if (buttons[i].getId() === "tenantDialogButton")
+					buttons[i].setText("Update");
+			}
+			
+			for(var i=0;i<jsonData.tenants.length;i++){
+				if(jsonData.tenants[i].tenantID===id){
+					this.oDialog.getContent()[0].bindElement("/tenants/"+i);
+				}    
+			}
+			
 		}
 
 		/**
