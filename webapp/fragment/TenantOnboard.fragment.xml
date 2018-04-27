@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
-	<Dialog id="tenantOnboard" title="Hello" stretch="true">
+	<Dialog id="tenantOnboard" title="Tenant" stretch="true">
 		<content>
 			<VBox class="sapUiSmallMargin">
 				<f:SimpleForm id="SimpleFormToolbar" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4"
