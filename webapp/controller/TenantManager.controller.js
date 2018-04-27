@@ -44,14 +44,12 @@ sap.ui.define([
 			});
 			this.getView().setModel(oModel);
 		},
-		
+		oDialog:null,
 		addTenant: function(oEvent) {
-			var oView = this.getView();
-			this.oDialog = oView.byId("tenantOnboard");
 			if (!this.oDialog) {
 	            // create dialog via fragment factory
 	            this.oDialog = sap.ui.xmlfragment("com.sap.cg.demokit.DemoKitCg.fragment.TenantOnboard",this);
-	            oView.addDependent(this.oDialog);
+	            this.getView().addDependent(this.oDialog);
 	         }
 	         this.oDialog.open();
 		},

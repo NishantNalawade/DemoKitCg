@@ -1,37 +1,49 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	'sap/ui/model/Filter'
-], function(Controller,Filter) {
+], function(Controller, Filter) {
 	"use strict";
 
 	return Controller.extend("com.sap.cg.demokit.DemoKitCg.controller.DeviceManagement", {
-		dialogfragment:null,
+		dialogfragment: null,
 		onDialogOpen: function(oEvent) {
-			if(!this.dialogFragment){
-			this.dialogFragment = sap.ui.xmlfragment("com.sap.cg.demokit.DemoKitCg.fragment.DeviceOnboard", this);
-			this.getView().addDependent(this.dialogFragment);
+			if (!this.dialogFragment) {
+				this.dialogFragment = sap.ui.xmlfragment("com.sap.cg.demokit.DemoKitCg.fragment.DeviceOnboard", this);
+				this.getView().addDependent(this.dialogFragment);
+				var oModel = new sap.ui.model.json.JSONModel(
+					 [{
+						"uid": "uugjg",
+						"deviceName": "hjh",
+						"tenantName": "",
+						"deviceId": "",
+						"deviceType": ""
+					}]
+				);
+				this.getView().setModel(oModel);
 			}
 			this.dialogFragment.open();
-			var flag=false;
-			if(oEvent.getSource().getBindingContext()){
-			var path=oEvent.getSource().getBindingContext().sPath;
-			flag=true;
+			var flag = false;
+			if (oEvent.getSource().getBindingContext()) {
+				var path = oEvent.getSource().getBindingContext().sPath;
+				flag = true;
 			}
-			var buttons=this.dialogFragment.getAggregation("buttons");
-			for(var i in buttons){
-				if(buttons[i].getId() === "deviceObtn" ){
-					if(flag)
-					buttons[i].setText("Update");
-					else
-					buttons[i].setText("Save");
+			var buttons = this.dialogFragment.getAggregation("buttons");
+			for (var i in buttons) {
+				if (buttons[i].getId() === "deviceObtn") {
+					if (flag) {
+						buttons[i].setText("Update");
+
+					} else {
+						buttons[i].setText("Save");
+					}
 				}
 			}
-			
+
 		},
-		closeDialog:function(oEvent){
+		closeDialog: function(oEvent) {
 			this.dialogFragment.close();
 		},
-			onSearch : function (oEvt) {
+		onSearch: function(oEvt) {
 
 			// add filter for search
 			var aFilters = [];
@@ -46,17 +58,15 @@ sap.ui.define([
 			var binding = list.getBinding("items");
 			binding.filter(aFilters, "Application");
 		},
-		iconFormatter:function(deviceType){
-			var icon="sap-icon://product";
-				if(deviceType === "cooler"){
-				icon="sap-icon://fridge";
-			}
-			else if(deviceType === "dispenser")
-			{
-			icon="sap-icon://lab";	
+		iconFormatter: function(deviceType) {
+			var icon = "sap-icon://product";
+			if (deviceType === "cooler") {
+				icon = "sap-icon://fridge";
+			} else if (deviceType === "dispenser") {
+				icon = "sap-icon://lab";
 			}
 			return icon;
-		
+
 		},
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
@@ -87,26 +97,26 @@ sap.ui.define([
 		 * (NOT before the first rendering! onInit() is used for that one!).
 		 * @memberOf com.sap.cg.demokit.DemoKitCg.view.DeviceManagementNew
 		 */
-			onBeforeRendering: function() {
-		
-			},
+		onBeforeRendering: function() {
+
+		},
 
 		/**
 		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
 		 * This hook is the same one that SAPUI5 controls get after being rendered.
 		 * @memberOf com.sap.cg.demokit.DemoKitCg.view.DeviceManagementNew
 		 */
-			onAfterRendering: function() {
-		
-			},
+		onAfterRendering: function() {
+
+		},
 
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
 		 * @memberOf com.sap.cg.demokit.DemoKitCg.view.DeviceManagementNew
 		 */
-			onExit: function() {
-		
-			}
+		onExit: function() {
+
+		}
 
 	});
 

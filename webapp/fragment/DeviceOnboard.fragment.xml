@@ -4,7 +4,7 @@
 			<VBox class="sapUiSmallMargin">
 						<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4"
 							labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
-							singleContainerFullSize="false" ariaLabelledBy="Title1">
+							singleContainerFullSize="false" ariaLabelledBy="Title1" >
 							<f:toolbar>
 								<Toolbar >
 									<Title text="Device Details" level="H4" titleStyle="H4"/>
@@ -13,15 +13,15 @@
 							</f:toolbar>
 							<f:content>
 								<Label text="Device Name"/>
-								<Input value="{deviceName}"/>
+								<Input  value="{deviceName}"/>
 								<Label text="UID"/>
-								<Input value="{uid}"/>
+								<Input  value="{uid}"/>
 								<Label text="Tenenet Name"/>
-								<Select>
-									<core:Item key="{ProductId}" text="{Name}" />
+								<Select >
+									<core:Item key="" text="" />
 								</Select>
 								<Label text="Device ID"/>
-								<Input value="{DeviceName}"/>
+								<Input  value="{deviceId}"/>
 								<Label text="Device Type"/>
 								<Select>
 									<items>
