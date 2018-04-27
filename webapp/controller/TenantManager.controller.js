@@ -15,6 +15,7 @@ sap.ui.define([
 		 * @memberOf com.sap.cg.demokit.DemoKitCg.view.TenantManager
 		 */
 		formatter: formatter,
+
 		onSearch: function(oEvt) {
 
 			// add filter for search
@@ -30,6 +31,7 @@ sap.ui.define([
 			var binding = list.getBinding("items");
 			binding.filter(aFilters, "Application");
 		},
+
 		onInit: function() {
 			var oModel = new JSONModel();
 			$.ajax({
@@ -44,18 +46,37 @@ sap.ui.define([
 			});
 			this.getView().setModel(oModel);
 		},
-		oDialog:null,
+
+		oDialog: null,
+
 		addTenant: function(oEvent) {
 			if (!this.oDialog) {
-	            // create dialog via fragment factory
-	            this.oDialog = sap.ui.xmlfragment("com.sap.cg.demokit.DemoKitCg.fragment.TenantOnboard",this);
-	            this.getView().addDependent(this.oDialog);
-	         }
-	         this.oDialog.open();
+				this.oDialog = sap.ui.xmlfragment("com.sap.cg.demokit.DemoKitCg.fragment.TenantOnboard", this);
+				this.getView().addDependent(this.oDialog);
+			}
+			this.oDialog.open();
+		},
+
+		closeDialog: function() {
+			this.oDialog.close();
+			this.oDialog.getAggregation("buttons")[0].setText("Save");
 		},
 		
-		closeDialog:function(){
-			this.oDialog.close();
+		editTenant:function(oEvent){
+			var id=oEvent.getSource().getDescription();
+			var jsonData=this.getView().getModel().getData();
+			for(var i=0;i<jsonData.length;i++){
+				if(jsonData[i].tenantID===id){
+					
+				}    
+			}
+			if (!this.oDialog) {
+				this.oDialog = sap.ui.xmlfragment("com.sap.cg.demokit.DemoKitCg.fragment.TenantOnboard", this);
+				this.getView().addDependent(this.oDialog);
+			}
+			this.oDialog.open();
+			var buttons = this.oDialog.getAggregation("buttons");
+			buttons[0].setText("Update");
 		}
 
 		/**

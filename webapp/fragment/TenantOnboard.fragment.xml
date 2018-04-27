@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
 	<Dialog id="tenantOnboard" title="Tenant" stretch="true">
 		<content>
-			<VBox class="sapUiSmallMargin">
+			<VBox class="sapUiSmallMargin" binding="{/tenants/0}">
 				<f:SimpleForm id="SimpleFormToolbar" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="3" labelSpanM="4"
 					labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
 					singleContainerFullSize="false" ariaLabelledBy="Title1">
@@ -13,13 +13,13 @@
 					</f:toolbar>
 					<f:content>
 						<Label text="Name"/>
-						<Input value="{TenentName}"/>
+						<Input value="{name}"/>
 						<Label text="Tenenet ID"/>
-						<Input value="{TenentID}"/>
+						<Input value="{tenantID}"/>
 						<Label text="UserName"/>
-						<Input value="{UserName}"/>
+						<Input value="{userName}"/>
 						<Label text="Status"/>
-						<Select id="Status" selectedKey="{Status}">
+						<Select id="Status" selectedKey="{status}">
 							<items>
 								<core:Item text="In Use" key="inuse"/>
 								<core:Item text="Not In Use" key="notinuse"/>
@@ -32,7 +32,7 @@
 			</VBox>
 		</content>
 		<buttons>
-			<Button text="Save"/>
+			<Button id="tenantDialogButton" text="Save"/>
 			<Button text="Cancel" press="closeDialog"/>
 		</buttons>
 	</Dialog>

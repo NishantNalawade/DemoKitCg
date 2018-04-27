@@ -1,4 +1,5 @@
-[{
+{
+	"tenants":[{
 	"name": "tenant1",
 	"tenantID": "001",
 	"userName": "i338015",
@@ -24,3 +25,4 @@
 	"userName": "i338015",
 	"status": "notworking"
 }]
+}
